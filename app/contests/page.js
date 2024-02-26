@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import OpinionsIcon from "../public/opinions-icon.svg";
 import TechAndGadgetsIcon from "../public/TechAndGadgetsIcon.svg";
-import HomeAndKitchenIcon from "../public//HomeAndKitchenIcon.svg";
+import HomeAndKitchenIcon from "../public/HomeAndKitchenIcon.svg";
 import BeautyAndHealthIcon from "../public/BeautyAndHealthIcon.svg";
 import AutoAndTravelIcon from "../public/AutoIcon.svg";
 import BooksAndMediaIcon from "../public/BooksAndMediaIcon.svg";
@@ -111,17 +111,17 @@ const contestsData = [
       },
     ],
   },
-  // Add more categories if needed
 ];
+
 // Contest Card Component
 const ContestCard = ({ contest }) => (
   <Card sx={{ maxWidth: 345, m: 2 }}>
     <CardMedia
       component="img"
-      height="200" // Increased height
+      height="200"
       image={contest.icon}
       alt={contest.label}
-      sx={{ objectFit: "contain" }} // Ensures the icon is contained within the bounds
+      sx={{ objectFit: "contain" }}
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
@@ -133,13 +133,14 @@ const ContestCard = ({ contest }) => (
     </CardContent>
   </Card>
 );
+
 // Main Contests Page Component
 const Contests = () => {
   return (
     <div>
       {contestsData.map((category) => (
         <section key={category.id} className="my-5">
-          <Typography variant="h4" gutterBottom textAlign="center">
+          <Typography variant="h4" gutterBottom align="center">
             {category.label}
           </Typography>
           <Grid container justifyContent="center">
