@@ -1,18 +1,18 @@
 import { Grid, Typography, Card, CardContent, CardMedia } from "@mui/material";
 import Link from "next/link";
 
-import OpinionsIcon from "@/public/opinions-icon.svg";
-import TechAndGadgetsIcon from "@/public/TechAndGadgetsIcon.svg";
-import HomeAndKitchenIcon from "@/public/HomeAndKitchenIcon.svg";
-import BeautyAndHealthIcon from "@/public/BeautyAndHealthIcon.svg";
-import AutoAndTravelIcon from "@/public/AutoIcon.svg";
-import BooksAndMediaIcon from "@/public/BooksAndMediaIcon.svg";
-import FashionIcon from "@/public/FashionIcon.svg";
-import SportsAndOutdoorsIcon from "@/public/SportsAndOutdoorsIcon.svg";
-import ToysAndGamesIcon from "@/public/ToysAndGamesIcon.svg";
-import LuxuryItemsIcon from "@/public/luxuryItemsIcon.svg";
-import HighEndTechIcon from "@/public/HighEndTechIcon.svg";
-import FineArtIcon from "@/public/FineArtIcon.svg";
+import OpinionsIcon from "../public/opinions-icon.svg";
+import TechAndGadgetsIcon from "../public/TechAndGadgetsIcon.svg";
+import HomeAndKitchenIcon from "../public//HomeAndKitchenIcon.svg";
+import BeautyAndHealthIcon from "../public/BeautyAndHealthIcon.svg";
+import AutoAndTravelIcon from "../public/AutoIcon.svg";
+import BooksAndMediaIcon from "../public/BooksAndMediaIcon.svg";
+import FashionIcon from "../public/FashionIcon.svg";
+import SportsAndOutdoorsIcon from "../public/SportsAndOutdoorsIcon.svg";
+import ToysAndGamesIcon from "../public/ToysAndGamesIcon.svg";
+import LuxuryItemsIcon from "../public/luxuryItemsIcon.svg";
+import HighEndTechIcon from "../public/HighEndTechIcon.svg";
+import FineArtIcon from "../public/FineArtIcon.svg";
 
 const contestsData = [
   {
