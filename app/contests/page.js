@@ -1,6 +1,6 @@
+'use client'; // Assuming this is a comment
 
-'use client' // 
-import Link from 'next/link'
+import Link from 'next/link';
 import { useState } from 'react';
 import { AppBar, Container, CssBaseline, Grid, Toolbar, Typography, Card, CardContent, CardMedia, Tab, Tabs, Paper } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
@@ -52,143 +52,30 @@ const AnimatedPaper = styled(animated(Paper))`
 
 const StyledTabs = styled(Tabs)`
   margin-bottom: 20px;
+  background-color: ${(props) => props.theme.primary};
+
+  & .MuiTabs-indicator {
+    background-color: ${(props) => props.theme.secondary};
+  }
+
+  & .Mui-selected,
+  & .Mui-selected:hover {
+    background-color: ${(props) => {
+      switch (props.value) {
+        case 0: // Bronze
+          return '#cd7f32'; // Replace with bronze color
+        case 1: // Silver
+          return '#c0c0c0'; // Replace with silver color
+        case 2: // Gold
+          return '#ffd700'; // Replace with gold color
+        case 3: // Platinum
+          return '#e5e4e2'; // Replace with platinum color
+        default:
+          return 'purple'; // Default color for other cases
+      }
+    }};
+  }
 `;
-
-const contestsData = [
-  {
-    id: 'bronze-category-contests',
-    label: 'Bronze (100pts)',
-    contests: [
-      {
-        id: '2a4dd854-186a-4a46-a150-d97b8ade9f8f',
-        label: 'Opinions',
-        description: 'Broadcast your thoughts, engage in debate.',
-        icon: 'Opinions',
-      },
-      {
-        id: 'f62df48b-eb05-4fe8-950a-c0d6267d5a0f',
-        label: 'Tech & Gadgets',
-        description: 'Explore, review, discuss the latest technology.',
-        icon: 'Tech & Gadgets',
-      },
-      {
-        id: '8b5c1868-6e6f-4221-8b73-1a70c0bad430',
-        label: 'Home & Kitchen',
-        description: 'Share insights on domestic essentials.',
-        icon: 'Home & Kitchen',
-      },
-    ],
-  },
-  {
-    id: 'silver-category-contests',
-    label: 'Silver (200pts)',
-    contests: [
-      {
-        id: '8732fa01-9e7b-4ddd-b114-fa99ae610746',
-        label: 'Beauty & Health',
-        description: 'Experience wellness with superior products.',
-        icon: 'Beauty & Health',
-      },
-      {
-        id: '868e3e9e-6af0-4607-bd14-ddf57ded1222',
-        label: 'Auto & Travel',
-        description: 'Navigate the world, one review at a time.',
-        icon: 'Auto & Travel',
-      },
-      {
-        id: '02ebb63e-2e9d-40ac-acfe-f0e9bd8080e1',
-        label: 'Books & Media',
-        description: 'Unveil literary gems and entertainment.',
-        icon: 'Books & Media',
-      },
-    ],
-  },
-  {
-    id: 'gold-category-contests',
-    label: 'Gold (500pts)',
-    contests: [
-      {
-        id: '5d74efe8-e15f-4d9c-9b7f-4c531cdae13d',
-        label: 'Fashion',
-        description: 'Stay trendy with stylish updates.',
-        icon: 'Fashion',
-      },
-      {
-        id: '67e6c2d4-bcf1-4686-be0a-61fc40a1c9cf',
-        label: 'Sports & Outdoors',
-        description: 'Join in athletic gear showdowns.',
-        icon: 'Sports & Outdoors',
-      },
-      {
-        id: '683ce9e4-5212-4560-bfc4-4d39973be8c7',
-        label: 'Toys & Games',
-        description: 'Share the fun with toy and game showdowns.',
-        icon: 'Toys & Games',
-      },
-    ],
-  },
-  {
-    id: 'platinum-category-contests',
-    label: 'Platinum (1000pts)',
-    contests: [
-      {
-        id: '0697422c-d511-4e09-a6a2-3b1f47723f50',
-        label: 'Luxury Items',
-        description: 'Review and rate the finest luxuries.',
-        icon: 'Luxury Items',
-      },
-      {
-        id: '48ff86f0-79f4-41ff-8e04-cc226a6f8485',
-        label: 'High-End Tech',
-        description: 'Experience technological innovation.',
-        icon: 'High-End Tech',
-      },
-      {
-        id: '48f3598a-8c2d-42de-ac66-7bbab658295a',
-        label: 'Fine Art',
-        description: 'Appraise and discuss exquisite art pieces.',
-        icon: 'Fine Art',
-      },
-    ],
-  },
-  // Add more categories if needed
-];
-
-const contestIcons = {
-  'Opinions': <FavoriteIcon />,
-  'Tech & Gadgets': <LaptopIcon />,
-  'Home & Kitchen': <KitchenIcon />,
-  'Beauty & Health': <OpencartIcon />,
-  'Auto & Travel': <CarIcon />,
-  'Books & Media': <BookIcon />,
-  'Fashion': <FashionIcon />,
-  'Sports & Outdoors': <BicycleIcon />,
-  'Toys & Games': <GamepadIcon />,
-  'Luxury Items': <GemIcon />,
-  'High-End Tech': <MicrochipIcon />,
-  'Fine Art': <PaletteIcon />,
-  // Add more icons as needed
-};
-
-const ContestCard = ({ contest }) => (
-  <Card sx={{ maxWidth: 345, m: 2 }}>
-    <CardMedia
-      component="img"
-      height="200"
-      src={contestIcons[contest.icon]}
-      alt={contest.label}
-      sx={{ objectFit: 'contain' }}
-    />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
-        {contest.label}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        {contest.description}
-      </Typography>
-    </CardContent>
-  </Card>
-);
 
 const RankExplanation = () => (
   <AnimatedPaper elevation={3}>
@@ -254,6 +141,7 @@ export default function Contests() {
         </Toolbar>
       </AppBar>
       <AnimatedContainer style={containerProps} maxWidth="lg">
+        <RankExplanation />
         <Typography variant="h3" gutterBottom textAlign="center">
           Contest Categories
         </Typography>
@@ -286,7 +174,6 @@ export default function Contests() {
             ))}
           </Grid>
         ))}
-        <RankExplanation />
       </AnimatedContainer>
     </ThemeProvider>
   );
